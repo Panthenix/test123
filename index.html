@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+    <link rel="icon" href="h2O.png" type="image/png">
+   <!-- Fichiers CSS de Slick Carousel -->
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
+   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>
+
+   <!-- Fichier JavaScript de jQuery -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <!-- Fichier JavaScript de Slick Carousel -->
+   <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+    <title>H2O.corporation</title>
+</head>
+<header>
+
+
+
+<h1><img src="Poiscailh2o.png" alt="H2O"></h1>
+
+
+<style>
+* {
+    text-align: center;
+}
+
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10; /* Pour être au-dessus du contenu */
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #0b48ff;
+    transition: 0.3s;
+}
+
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-6px, -6px);
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initialement caché à gauche */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+    z-index: 9;
+}
+
+.menu.open {
+    left: 0;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #555555;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-content {
+    padding: 20px;
+}
+
+.curtain-option {
+    padding: 15px 20px;
+    border-bottom: 1px solid #555;
+    cursor: pointer;
+}
+
+.curtain-content {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: lightblue; /* Couleur du "rideau" */
+    border: 1px solid #ccc;
+    display: none; /* Initialement caché */
+}
+
+.curtain-content.open {
+    display: block;
+}
+
+* {
+    text-align: center;
+}
+
+
+body {
+    background-image: url('matt-hardy-6ArTTluciuA-unsplash.jpg');
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+    border: 10px solid blue;
+    border-radius: 20px;
+}
+
+
+img {
+   
+    height: 90px;
+    width: 150px;
+    margin-left: 10px;
+}
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    padding: 0px;
+    width: 100%;
+    background: black;
+    height: 90px;
+    margin: 0px;
+    
+    border-radius: 10px;
+    
+    padding-top: 0px;
+
+}
+#Bienvenue {
+    margin: 10px;
+    text-align: center;
+    text-decoration:  underline;
+    
+}
+#who {
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    text-decoration: underline;
+    
+    
+}
+#pwho {
+    text-align: center;
+    padding: 10px;
+   
+}
+
+p {
+    text-align: center;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#plus{
+    text-align: center;
+    padding: 10px;
+    text-decoration: underline;
+}
+#v {
+    text-align: center;
+    padding: 10px;
+    text-decoration: underline;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+.img {
+    
+    margin: 10px;
+    height: 400px;
+    width: 50%;
+    border: 10px solid rgb(21, 21, 40);
+}
+.img {
+    
+   
+    margin-left: 47%;
+    height: 400px;
+    width: 50%;
+    border: 10px solid rgb(21, 21, 40);
+}
+
+
+h1, h2 {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.container-txt p{
+    background: #0b8ce8;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .img1, .img2 {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.container-txt h2{
+    background: #a1c3dc;
+    border-radius: 10px;
+    
+    
+  
+}
+.container-txt p {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+   
+}
+
+.container-txt p:hover {
+    transform: scale(1.05); /* Agrandit le conteneur à 105% */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Ajoute une ombre pour un effet visuel */
+    cursor: pointer;
+   
+}
+
+
+/* Conteneur du loading */
+.loading-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1000; /* Toujours au-dessus des autres éléments */
+    font-family: Arial, sans-serif;
+    color: #0b48ff;
+}
+
+/* Conteneur de l'eau */
+.water {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%; /* Cercle pour simuler une goutte d'eau */
+    background: #0b8ce8;
+    margin: 0 auto;
+}
+
+/* Vagues */
+.wave {
+    position: absolute;
+    top: 80%;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 40%;
+    animation: wave-animation 2s infinite ease-in-out;
+}
+
+/* Deuxième vague pour un effet décalé */
+.wave:nth-child(2) {
+    animation-delay: -1s;
+}
+
+/* Animation des vagues */
+@keyframes wave-animation {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+/* Conteneur des gouttes */
+.droplets-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Empêche les interactions avec les gouttes */
+    overflow: hidden;
+    z-index: 1000;
+}
+
+/* Gouttes d'eau */
+.droplet {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #0b8ce8;
+    border-radius: 50%;
+    animation: drop 2s ease-in infinite;
+    opacity: 0.8;
+}
+
+/* Animation des gouttes */
+@keyframes drop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh); /* Descend jusqu'en bas de l'écran */
+        opacity: 0;
+    }
+}
+
+/* Animation de la goutte */
+@keyframes drop {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh); /* Descend jusqu'en bas de l'écran */
+        opacity: 0;
+    }
+}
+
+.slick-prev, .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.slick-prev {
+    left: -20px;
+}
+
+.slick-next {
+    right: -20px;
+}
+
+.slick-prev:hover, .slick-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.center img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.center img:hover {
+    transform: scale(1.05); /* Agrandit l'image à 105% */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Ajoute une ombre pour un effet visuel */
+}
+footer {
+    background: #0b8ce8;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 97.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    margin-top: 20px;
+    height: auto;
+    
+}
+footer img {
+    height: auto;
+}
+</style>
+</head>
+<body>
+
+   
+
+    <script>
+        const themeSwitch = document.getElementById('themeSwitch');
+    
+        // Vérifie si un thème est déjà enregistré dans le localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeSwitch.checked = true;
+        }
+    
+        // Écoute le changement d'état du bouton
+        themeSwitch.addEventListener('change', () => {
+            if (themeSwitch.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark'); // Enregistre le mode sombre
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light'); // Enregistre le mode clair
+            }
+        });
+    </script>
+
+
+
+    <div class="loading-container">
+        <div class="water">
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+        <p>Chargement...</p>
+    </div>
+    
+    <div class="droplets-container"></div>
+
+    <script>
+        // Simule un chargement (par exemple, 3 secondes)
+        window.addEventListener('load', () => {
+            const loadingContainer = document.querySelector('.loading-container');
+            const dropletsContainer = document.querySelector('.droplets-container');
+    
+            // Cache le loading après 3 secondes
+            setTimeout(() => {
+                loadingContainer.style.display = 'none'; // Cache le conteneur de chargement
+    
+                // Génère des gouttes d'eau
+                for (let i = 0; i < 20; i++) {
+                    const droplet = document.createElement('div');
+                    droplet.classList.add('droplet');
+                    droplet.style.left = Math.random() * 100 + 'vw'; // Position horizontale aléatoire
+                    droplet.style.animationDelay = Math.random() * 2 + 's'; // Délai aléatoire
+                    dropletsContainer.appendChild(droplet);
+    
+                    // Supprime la goutte après l'animation
+                    setTimeout(() => {
+                        droplet.remove();
+                    }, 2000); // Durée de l'animation (2s)
+                }
+            }, 3000); // 3000ms = 3 secondes
+        });
+    </script>
+
+    <script>
+        // Simule un chargement (par exemple, 3 secondes)
+        window.addEventListener('load', () => {
+            const loadingContainer = document.querySelector('.loading-container');
+            setTimeout(() => {
+                loadingContainer.style.display = 'none'; // Cache le loading après le chargement
+            }, 3000); // 3000ms = 3 secondes
+        });
+    </script>
+
+
+<button class="hamburger-menu" id="hamburgerBtn">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</button>
+
+<div class="menu" id="menu">
+<div class="menu-content">
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="patron.html">Notre PDG</a></li>
+        <li class="curtain-option" id="toggleCurtain">Afficher/Masquer le Rideau</li>
+        <li><a href="#">Contact</a></li>
+
+
+    </ul>
+</div>
+</div>
+
+<div class="curtain-content" id="curtainArea">
+
+
+
+</div>
+
+<script>
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const menu = document.getElementById('menu');
+const toggleCurtainBtn = document.getElementById('toggleCurtain');
+const curtainArea = document.getElementById('curtainArea');
+
+hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('open');
+    menu.classList.toggle('open');
+});
+
+toggleCurtainBtn.addEventListener('click', () => {
+    curtainArea.classList.toggle('open');
+});
+</script>
+</header>
+<body>
+    
+   
+    
+
+    
+       <div class="container-txt">
+        <h2 id="who">Qui somme nous:</h2>
+        <p id="pwho">Nous sommes une entreprise qui a pour but de faire cohabiter les poissons avec les humains de façon à embellir les villes</p>
+        
+    
+       
+        <h2 id="plus">De plus:</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dolorum incidunt maiores voluptatem quas totam quaerat! Consequuntur magni voluptas, labore, nobis nam officiis vero possimus repellat commodi, tempora laborum veniam!</p>
+       <h2 id="v">Voici quelque aperçus:</h2>
+       </div>
+       <div class="center">
+        <div><img src="entrprise.jpg" alt="Image 1"></div>
+        <div><img src="poiscailh2o.png" alt="Image 2"></div>
+        <div><img src="image3.jpg" alt="Image 3"></div>
+        <div><img src="image4.jpg" alt="Image 4"></div>
+    </div>
+    
+    <script>
+    $('.center').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: true,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    arrows: true,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+</script>
+
+
+
+        <footer>
+            <p>© 2025 H2O.corporation. Tous droits réservés.</p>
+            <a aria-label="Chat on WhatsApp" href="https://wa.me/33771504775"><img alt="Chat on WhatsApp" src="WhatsAppButtonGreenSmall.png" />
+            </a>
+            
+
+        </footer>
+      
+    
+</body>
+</html>
